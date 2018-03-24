@@ -4,8 +4,7 @@ public class Client
 {
   public static void main(String[] args) throws Exception
   {
-
-Socket sock = new Socket("127.0.0.1", 3000);
+     Socket sock = new Socket("127.0.0.1", 3000);
                                // reading from keyboard (keyRead object)
      BufferedReader keyRead = new BufferedReader(new InputStreamReader(System.in));
                               // sending to client (pwrite object)
@@ -16,8 +15,9 @@ Socket sock = new Socket("127.0.0.1", 3000);
      InputStream istream = sock.getInputStream();
      BufferedReader receiveRead = new BufferedReader(new InputStreamReader(istream));
  
-
- String receiveMessage, sendMessage;               
+     System.out.println("Start the communication, type and press Enter key");
+ 
+     String receiveMessage, sendMessage;               
      while(true)
      {
         sendMessage = keyRead.readLine();  // keyboard reading
@@ -27,7 +27,6 @@ Socket sock = new Socket("127.0.0.1", 3000);
         {
             System.out.println(receiveMessage); // displaying at DOS prompt
         }         
-      }  
-
-}
-}
+      }               
+    }                    
+} 
